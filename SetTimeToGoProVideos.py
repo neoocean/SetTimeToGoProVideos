@@ -6,6 +6,7 @@ import fnmatch
 # 'GOPR'로 시작하는 파일 이름을 던지면 연속으로 촬영된 파일을 'run' 리스트에 붙여줌.
 def getFilesByNumber(n): 
 	list = fnmatch.filter(os.listdir(os.getcwd()), ('GP??' + n.zfill(4) + '.MP4'))
+	list.sort()
 	for f in list:
 		run.append(f)
 
